@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Overview
+
+This is a fully functional video calling application built using modern web technologies. The app allows users to create and join video conferencing rooms where multiple participants can communicate in real-time. The app leverages Clerk.js for secure user authentication, Stream SDK for WebRTC connections, and is built with Next.js for a seamless user experience.
+
+## Features
+
+- **User Authentication:** Powered by Clerk.js, ensuring secure and easy login and registration for users.
+- **Video Conferencing:** Create and join video rooms with multiple participants.
+- **Real-Time Communication:** Utilizes Stream SDK to establish WebRTC connections for real-time video and audio communication between users.
+- **Scalable Architecture:** Built on Next.js, offering server-side rendering, optimized performance, and a scalable foundation.
+
+## Technology Stack
+
+- **Next.js:** Framework for building the application with server-side rendering and static site generation.
+- **Clerk.js:** Handles user authentication and management, providing a secure and user-friendly experience.
+- **Stream SDK:** Provides WebRTC support for real-time video and audio communication.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Before you start, make sure you have the following installed:
+
+- Node.js
+- npm or yarn
+- A Clerk.js account
+- A Stream SDK account
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/tanish35/Video-Calling.git
+   cd video-calling-app
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+### Set up environment variables:
+
+Create a `.env.local` file in the root directory and add the following:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
+CLERK_SECRET_KEY=<your-clerk-secret-key>
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+NEXT_PUBLIC_STREAM_API_KEY=<your-stream-api-key>
+STREAM_SECRET_KEY=<your-stream-secret-key>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Replace `<your-clerk-publishable-key>`, `<your-clerk-secret-key>`, `<your-stream-api-key>`, and `<your-stream-secret-key>` with your actual keys.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. **Run the application:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   Your app should now be running on [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Sign Up/Sign In:**
+   Users can sign up or sign in using the Clerk.js authentication form.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Create a Room:**
+   Once authenticated, users can create a new video conference room.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Join a Room:**
+   Users can join an existing room by entering the room ID or following a shared link.
 
-## Deploy on Vercel
+4. **Real-Time Communication:**
+   After joining a room, users will be connected via Stream SDK’s WebRTC service, enabling real-time video and audio communication.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app is already live and hosted at [vortex.devpixel.site](https://vortex.devpixel.site). 
+
+For further development or deployment:
+
+1. **Deploy to Vercel:**
+   ```bash
+   vercel
+   ```
+
+2. **Set environment variables in Vercel:**
+   Make sure to add the same environment variables from your `.env.local` file to the Vercel dashboard.
+
+3. **Access your deployed app:**
+   Your app will be live at the domain provided by Vercel or another chosen hosting service.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue if you have any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to reach out with any questions or feedback. Happy coding!
